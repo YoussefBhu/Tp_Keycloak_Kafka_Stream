@@ -1,0 +1,19 @@
+<div style="width: 100%;padding-left: 10% ;padding-right: 10%;"><p style="text-align: center;">Customers</p>
+    <div *ngIf="ClientsManager else Forbidden"> 
+        <table class="w3-table-all">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+              </tr>
+              <tr *ngFor="let Client of Clients">
+                <td>{{Client.nom}}</td>
+                <td>{{Client.prenom}}</td>
+                <td>{{Client.email}}</td>
+              </tr>
+        </table>
+      </div>
+      <ng-template #Forbidden>
+        <p style="color: red; font-size: 30px;text-align: center;">Accès interdit!!!!!</p>
+      </ng-template>
+    </div>

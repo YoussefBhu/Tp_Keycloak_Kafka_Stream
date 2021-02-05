@@ -1,0 +1,17 @@
+<div style="width: 100%;padding-left: 10% ;padding-right: 10%;"><p style="text-align: center;">Bills</p>
+    <div *ngIf="BillsManager else Forbidden"> 
+        <table class="w3-table-all">
+              <tr>
+                <th>Nom Complet du client</th>
+                <th>Date</th>
+              </tr>
+              <tr *ngFor="let Bill of Bills">
+                <td> <!--{{Bill.customer.nom}} {{Bill.customer.prenom}} --></td>
+                <td>{{Bill.date}}</td>
+              </tr> 
+        </table>
+      </div>
+      <ng-template #Forbidden>
+        <p style="color: red; font-size: 30px;text-align: center;">Accès interdit!!!!!</p>
+      </ng-template>
+    </div>

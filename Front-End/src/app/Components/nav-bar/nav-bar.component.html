@@ -1,0 +1,13 @@
+<ul>
+    <li><a href="#home" >App-Management</a></li>
+    <div *ngIf="KcS.kc.authenticated else login">
+        <li><a routerLink="/Products">Products</a></li>
+        <li><a routerLink="/Clients">Clients</a></li>
+        <li><a routerLink="/Bills">Bills</a></li>
+        <li  style="float:right"><a (click)="onLogout()">Logout</a></li> 
+        <li  style="float:right"><a class="active" >{{KcS.kc.tokenParsed.preferred_username}} </a></li> 
+    </div>
+    <ng-template #login>
+        <li  style="float:right"><a class="active" (click)="onLogin()">Login</a></li>
+    </ng-template>
+  </ul>

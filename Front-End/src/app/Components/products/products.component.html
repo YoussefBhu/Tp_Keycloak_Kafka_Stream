@@ -1,0 +1,17 @@
+<div style="width: 100%;padding-left: 10% ;padding-right: 10%;"><p style="text-align: center;">Products</p>
+<div *ngIf="ProductManager else Forbidden"> 
+    <table class="w3-table-all">
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+          </tr>
+          <tr *ngFor="let Product of Products">
+            <td>{{Product.nom}}</td>
+            <td>{{Product.prix}}</td>
+          </tr>
+    </table>
+  </div>
+  <ng-template #Forbidden>
+    <p style="color: red; font-size: 30px;text-align: center;">Accès interdit!!!!!</p>
+  </ng-template>
+</div>
